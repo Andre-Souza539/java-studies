@@ -52,11 +52,35 @@ public class Conta {
 
 
 	public void deposita(double valor) {
-		this.saldo = this.saldo + valor;
+		this.saldo += valor;
+	}
+
+	public boolean saca(double valor) {
+		if(this.saldo >= valor ) {
+			this.saldo -= valor;
+			return true;
+		} else {
+			System.out.println("Valor insuficiente");
+			return false;
+		}
+
+	}
+
+  public boolean transferir(double valor, Conta destino) {
+
+		if(this.saldo >= valor ) {
+			this.saldo -= valor;
+			destino.deposita(valor);
+			return true;
+		}
+		System.out.println("Saldo Insuficiente");
+		return false;
 	}
 }
 
+
 /* Testando Método */
+
 
 
 public class testaMetodo {
@@ -66,6 +90,17 @@ public class testaMetodo {
 		contaDoAndre.saldo = 100;
 		contaDoAndre.deposita(50);
 		System.out.println(contaDoAndre.saldo);
+		contaDoAndre.saca(5);
+		System.out.println(contaDoAndre.saldo);
+	
+		Conta contaDaVi = new Conta();
+		contaDaVi.deposita(1000);
+		System.out.println(contaDaVi.saldo);
+		contaDaVi.transferir(300, contaDoAndre);
+
+		System.out.println(contaDoAndre.saldo);
+
+
 	}
 
 }
