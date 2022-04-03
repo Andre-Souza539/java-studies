@@ -1,4 +1,5 @@
 /* Primeiro Objeto  do ByteBank Conta.java */
+
 public class Conta {
 	double saldo;
 	int agencia;
@@ -20,8 +21,8 @@ public class CriaConta {
 	}
 }
 
-
 /* Criando Múltiplas Contas */
+
 public class CriaConta {
 
 	public static void main(String[] args) {
@@ -78,10 +79,7 @@ public class Conta {
 	}
 }
 
-
 /* Testando Método */
-
-
 
 public class testaMetodo {
 
@@ -92,7 +90,7 @@ public class testaMetodo {
 		System.out.println(contaDoAndre.saldo);
 		contaDoAndre.saca(5);
 		System.out.println(contaDoAndre.saldo);
-	
+
 		Conta contaDaVi = new Conta();
 		contaDaVi.deposita(1000);
 		System.out.println(contaDaVi.saldo);
@@ -103,4 +101,40 @@ public class testaMetodo {
 
 	}
 
+}
+
+/* Criando Cliente */
+
+
+public class Cliente {
+
+	String nome;
+	String cpf;
+	String profissao;
+
+}
+
+
+/* Testando Objeto Cliente */
+
+
+public class objetoCliente {
+	public static void main(String[] args) {
+
+		Cliente andre = new Cliente();
+		andre.nome = "André";
+		andre.cpf = "555.555.555-55";
+		andre.profissao = "Programador";
+
+		System.out.println(andre.nome + " " + andre.cpf + " " + andre.profissao );
+
+		Conta conta01 = new Conta();
+		conta01.saldo = 100;
+		conta01.titular = andre;
+		conta01.agencia = 123;
+		conta01.numero = 666;
+
+		System.out.println(conta01.saldo + " " + conta01.titular.nome + " " + conta01.numero );
+
+	}
 }
